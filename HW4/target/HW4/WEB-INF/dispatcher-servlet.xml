@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="edu.webtools"/>
+
+    <mvc:annotation-driven/>
+
+    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--        <property name="order" value="2"/>-->
+        <property name="prefix" value="/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+
+    </bean>
+<!--        Part 4 -->
+<!--        Controller Set up-->
+    <bean class = "org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean name="/part4/addMovie" class="edu.webtools.part4.controller.Add"/>
+    <bean name="/part4/browseMovie" class="edu.webtools.part4.controller.Browse"/>
+    <bean name="/part4/home" class="edu.webtools.part4.controller.Init"/>
+    <bean name="/part4/select" class="edu.webtools.part4.controller.Select"/>
+    <!--    Interceptor Set up-->
+    <!-- Configures Interceptors -->
+    <mvc:interceptors>
+        <!-- This XML will intercept all URIs -->
+        <bean class="edu.webtools.interceptor.Xssinterceptor"></bean>
+        <!-- This XML will apply interceptor to only configured URIs -->
+<!--        <mvc:interceptor>-->
+<!--            <bean class="com.luv2code.part4.interceptor.Xssinterceptor"></bean>-->
+<!--        </mvc:interceptor>-->
+    </mvc:interceptors>
+
+    <!-- part5   -->
+<!--      Interceptor Set up-->
+
+    <!--    bean set up -->
+    <bean class = "org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name = "mappings">
+            <props>
+                <prop key = "/part5/num">NumController</prop>
+                <prop key = "/part5/book">BookController</prop>
+                <prop key="/part5/home">HomeController</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="NumController" class="edu.webtools.part5.controller.Num"/>
+    <bean id="BookController" class="edu.webtools.part5.controller.AddBooks"/>
+    <bean id="HomeController" class="edu.webtools.part5.controller.Home"/>
+
+<!--      Part6  -->
+
+
+
+    <!-- Part 7   -->
+
+</beans>

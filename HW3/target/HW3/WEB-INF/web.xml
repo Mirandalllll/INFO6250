@@ -1,0 +1,53 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>par4</servlet-name>
+    <servlet-class>com.webtools.part4.controller.Part4Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>par4</servlet-name>
+    <url-pattern>/part4/part4</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>part5</servlet-name>
+    <servlet-class>com.webtools.part5.controller.Part5Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>part5</servlet-name>
+    <url-pattern>/part5/part5</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>part6</servlet-name>
+    <servlet-class>com.webtools.part6.controller.Part6Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>part6</servlet-name>
+    <url-pattern>/part6/part6</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>part7</servlet-name>
+    <servlet-class>com.webtools.part7.Part7Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>part7</servlet-name>
+    <url-pattern>/part7/part7</url-pattern>
+  </servlet-mapping>
+  
+  <taglib>
+    <taglib-uri>tag</taglib-uri>
+    <taglib-location>/WEB-INF/tag.tld</taglib-location>
+  </taglib>
+<!--  <servlet>-->
+<!--    <servlet-name>part5</servlet-name>-->
+<!--    <servlet-class>com.webtools.part5.controller.Part5Servlet</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>part5</servlet-name>-->
+<!--    <url-pattern>/part5/part5</url-pattern>-->
+<!--  </servlet-mapping>-->
+</web-app>

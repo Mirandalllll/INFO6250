@@ -23,7 +23,7 @@
 
 <!--sql:query -->
 <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-                   url="jdbc:mysql://localhost:3306/jdbc:mysql://localhost:3306/student?useSSL=false&serverTimezone=UTC"
+                   url="jdbc:mysql://localhost:3306/student?useSSL=false&serverTimezone=UTC"
                    user="root"  password="1234"/>
 
 <sql:query dataSource="${db}" var="rs">
@@ -49,7 +49,7 @@
 
 <!--sql:update -->
 <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
-                   url="jdbc:mysql://localhost:3306/jdbc:mysql://localhost:3306/student?useSSL=false&serverTimezone=UTC"
+                   url="jdbc:mysql://localhost:3306/student?useSSL=false&serverTimezone=UTC"
                    user="root"  password="1234"/>
 <sql:update dataSource="${db}" var="count">
     INSERT INTO Students VALUES (154,'Nasreen', 'jaha', 25);
@@ -77,6 +77,3 @@
 </table>
 </body>
 </html>
-CREATE USER 'hbstudent'@'localhost' IDENTIFIED by 'hbstudent';
-
-GRANT ALL PRIVILEGES ON * . * TO 'hbstudent'@'localhost';
